@@ -1,0 +1,47 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="py-8 bg-gray-100">
+  <div class="container mx-auto px-4">
+    <div class="flex justify-center text-center md:text-left space-x-6 flex-wrap"> <!-- Use flex-wrap in case of smaller screens -->
+      <!-- Card for Member 1 -->
+      <div class="max-w-xs mb-4">
+        <img class="custom-size rounded-full mx-auto" src="{{ url_for('static', filename='images/Kenang.jpg') }}" alt="Member 1">
+        <div class="px-4 py-2">
+          <div class="mt-4">
+            <h1 class="text-lg font-bold">Kenang Alfa A.</h1>
+            <span class="text-sm mb-4">162112133105</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card for Member 2 -->
+      <div class="max-w-xs mb-4">
+        <img class="custom-size rounded-full mx-auto" src="{{ url_for('static', filename='images/michael.jpg') }}" alt="Member 2">
+        <div class="px-4 py-2">
+          <div class="mt-4">
+            <h1 class="text-lg font-bold">Michael Albert T.</h1>
+            <span class="text-sm mb-2">164221011</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card for Member 3 -->
+      <div class="max-w-xs mb-4">
+        <img class="custom-size rounded-full mx-auto" src="{{ url_for('static', filename='images/amalika.jpg') }}" alt="Member 3">
+        <div class="px-4 py-2">
+          <div class="mt-4">
+            <h1 class="text-lg font-bold">Amalika Ari A.</h1>
+            <span class="text-sm mb-2">164221029</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="text-center py-4">
+    <p class="text-gray-600 text-sm">
+        Kelompok 6 Algoritma Pemrograman II © 2023
+    </p>
+</div>
+{% endblock %}

@@ -1,0 +1,62 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<!-- Main content for homepage -->
+<div class="flex flex-col bg-gray-100">
+    <!-- Background image section with text overlay -->
+    <div class="w-full bg-cover bg-center rounded-b-3xl" style="background-image: url('{{ url_for('static', filename='images/briefcase.jpg') }}');">
+      <div class="bg-black bg-opacity-50 flex flex-col items-start rounded-b-3xl pt-64 pl-12">
+        <h1 class="text-9xl font-bold text-white text-left">ATSku</h1>
+      </div>
+    </div>
+</div>
+<div class="bg-gray-100 p-11 -mt-6">
+    <p class="text-gray-600 text-lg">
+        Welcome to ATSku. We assist you in analyzing your CV
+    </p>
+    <p class="text-gray-600 text-lg">
+        to determine a suitable job category, compare the similarity
+    </p>
+    <p class="text-gray-600 text-lg">
+        between two CVs and more.
+    </p>
+    <p class="text-gray-600 text-lg py-4">
+        Upload your CV and start your career analysis now!
+    </p>
+    <div class="my-2 mt-4 inline-flex items-center bg-[#0174BE] text-white py-2 px-4 rounded hover:bg-[#0C356A] transition duration-300">
+        <a href="{{ url_for('about') }}" class="flex items-center">
+            Tentang Kami
+            <!-- Inline SVG icon -->
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 ml-2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M18 18.72a9.094 9.094 0 0 0 3.741-.479 3 3 0 0 0-4.682-2.72m.94 3.198.001.031c0 .225-.012.447-.037.666A11.944 11.944 0 0 1 12 21c-2.17 0-4.207-.576-5.963-1.584A6.062 6.062 0 0 1 6 18.719m12 0a5.971 5.971 0 0 0-.941-3.197m0 0A5.995 5.995 0 0 0 12 12.75a5.995 5.995 0 0 0-5.058 2.772m0 0a3 3 0 0 0-4.681 2.72 8.986 8.986 0 0 0 3.74.477m.94-3.197a5.971 5.971 0 0 0-.94 3.197M15 6.75a3 3 0 1 1-6 0 3 3 0 0 1 6 0Zm6 3a2.25 2.25 0 1 1-4.5 0 2.25 2.25 0 0 1 4.5 0Zm-13.5 0a2.25 2.25 0 1 1-4.5 0 2.25 2.25 0 0 1 4.5 0Z" />
+            </svg>          
+        </a>
+    </div>      
+    <!-- More content goes here -->
+</div>
+<div class="container mx-auto px-6 py-4 mb-4">
+    <div class="flex flex-row justify-center gap-4">
+        <!-- Card 1 -->
+        <div class="bg-white rounded-lg shadow-lg p-5 text-center flex-1 mx-1 my-5">
+            <div class="text-5xl text-[#0174BE] mb-4 mt-4">🔒</div>
+            <h3 class="text-lg font-semibold">Your privacy is guaranteed</h3>
+            <p class="text-gray-600 mt-2">The file you enter will not</p>
+            <p class="text-gray-600 mb-4 mt-2">be stored in our database.</p>
+        </div>
+        <!-- Card 2 -->
+        <div class="bg-white rounded-lg shadow-lg p-5 text-center flex-1 mx-1 my-5">
+            <div class="text-5xl text-[#0174BE] mb-4 mt-4">💸</div>
+            <h3 class="text-lg font-semibold">Free of charge</h3>
+            <p class="text-gray-600 mt-2">Using our WebApp to analyse</p>
+            <p class="text-gray-600 mb-4 mt-2">your CV incurs no fees.</p>
+        </div>
+        <!-- Card 3 -->
+        <div class="bg-white rounded-lg shadow-lg p-5 text-center flex-1 mx-1 my-5">
+            <div class="text-5xl text-[#0174BE] mb-4 mt-4">🛠️</div>
+            <h3 class="text-lg font-semibold">Easy to use.</h3>
+            <p class="text-gray-600 mt-2">With only a single click you will</p>
+            <p class="text-gray-600 mb-4 mt-2">get an accurate results.</p>
+        </div>
+    </div>
+</div>
+{% endblock %}

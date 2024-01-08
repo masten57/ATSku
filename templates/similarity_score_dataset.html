@@ -1,0 +1,66 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="flex justify-center py-8">
+  <div class="w-full max-w-lg">
+    <h2 class="text-3xl font-bold text-center text-[#0C356A] mb-8">Skor Kesamaan dengan Dataset</h2>
+    <!-- Form untuk mengunggah CV dan memilih kategori pekerjaan -->
+    <div class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
+      <form action="/similarity-dataset" method="post" enctype="multipart/form-data" class="space-y-4">
+        <div>
+          <label for="resume" class="block text-gray-700 text-sm font-bold mb-2">Unggah CV Anda:</label>
+          <input type="file" name="resume" id="resume" required class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
+        </div>
+        <div>
+          <label for="category" class="block text-gray-700 text-sm font-bold mb-2">Pilih Kategori Pekerjaan:</label>
+          <select name="category" id="category" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
+            <option value="Java Developer">Java Developer</option>
+            <option value="Testing">Testing</option>
+            <option value="DevOps Engineer">DevOps Engineer</option>
+            <option value="Python Developer">Python Developer</option>
+            <option value="Web Designing">Web Designing</option>
+            <option value="HR">HR</option>
+            <option value="Hadoop">Hadoop</option>
+            <option value="Blockchain">Blockchain</option>
+            <option value="ETL Developer">ETL Developer</option>
+            <option value="Operations Manager">Operations Manager</option>
+            <option value="Data Science">Data Science</option>
+            <option value="Sales">Sales</option>
+            <option value="Mechanical Engineer">Mechanical Engineer</option>
+            <option value="Arts">Arts</option>
+            <option value="Database">Database</option>
+            <option value="Electrical Engineering">Electrical Engineering</option>
+            <option value="Health and fitness">Health and fitness</option>
+            <option value="PMO">PMO</option>
+            <option value="Business Analyst">Business Analyst</option>
+            <option value="DotNet Developer">DotNet Developer</option>
+            <option value="Automation Testing">Automation Testing</option>
+            <option value="Network Security Engineer">Network Security Engineer</option>
+            <option value="SAP Developer">SAP Developer</option>
+            <option value="Civil Engineer">Civil Engineer</option>
+            <option value="Advocate">Advocate</option>
+        </select>
+        </div>
+        <div class="flex justify-center">
+          <button type="submit" class="mt-3 px-4 py-2 bg-[#0174BE] hover:bg-blue-700 text-white font-semibold rounded-lg">
+            Analisis
+          </button>
+        </div>
+      </form>
+    </div>
+
+    <!-- Menampilkan hasil -->
+    {% if score1 %}
+    <div class="bg-white shadow-md rounded px-8 pt-6 pb-8">
+      <p class="text-center font-semibold">Kategori: {{ category }}</p>
+    
+      <h2 class="text-xl font-bold text-center mt-4 mb-2">Teks CV:</h2>
+      <p class="whitespace-pre-wrap text-center">{{ pdf_text }}</p>
+    
+      <h2 class="text-xl font-bold text-center mt-4">Skor Kesamaan:</h2>
+      <p class="text-center">Score: <span class="font-semibold">{{ score1 }}</span></p>
+    </div>
+    {% endif %}
+  </div>
+</div>
+{% endblock %}
